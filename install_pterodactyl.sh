@@ -31,7 +31,7 @@ set -e
 fn_exists() { declare -F "$1" >/dev/null; }
 if ! fn_exists lib_loaded; then
   # shellcheck source=lib/lib.sh
-  source /tmp/lib.sh || source <(curl -sSL "https://raw.githubusercontent.com/treckk00/pt_panel/main"/lib.sh)
+  source <(curl -sSL "https://raw.githubusercontent.com/treckk00/pt_panel/main"/lib.sh)
   ! fn_exists lib_loaded && echo "* ERROR: Could not load lib script" && exit 1
 fi
 
